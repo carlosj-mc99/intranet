@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+
+<style>
+<!--
+.styling{
+background-color:black;
+color:lime;
+font: bold 16px MS Sans Serif;
+padding: 3px;
+}
+-->
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #FF0000;
+}
+.style1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+body,td,th {
+	color: #FFFFFF;
+}
+.style2 {font-size: 36px}
+-->
+</style></head>
+
+<body>
+<script>
+
+/*Current date script credit: 
+JavaScript Kit (www.javascriptkit.com)
+Over 200+ free scripts here!
+*/
+
+var mydate=new Date()
+var year=mydate.getYear()
+if (year < 1000)
+year+=1900
+var day=mydate.getDay()
+var month=mydate.getMonth()+1
+if (month<10)
+month="0"+month
+var daym=mydate.getDate()
+if (daym<10)
+daym="0"+daym
+document.write("<small><font color='000000' face='Arial'><b>"+month+"/"+daym+"/"+year+"</b></font></small>")
+
+
+</script>
+
+
+
+
+
+<div id="Layer1" style="position:absolute; left:307px; top:25px; width:570px; height:62px; z-index:1">
+  <div align="center" class="style1">
+    <div style="position:relative;left:0px;top:0px">
+<span id="highlighter" style="position:absolute;left:0;top:0;font-size:18px;font-family:Verdana;background-color:black;clip:rect(0px 0px auto 0px)"></span>
+</div>
+
+<script type="text/javascript">
+
+/*
+Highligher Scroller script- By JavaScript Kit
+For this and over 400+ free scripts, visit http://www.javascriptkit.com/
+This notice must stay intact
+*/
+
+var tickercontents=new Array()
+tickercontents[0]='bienvenidos a ingenieria en sistemas computacinales'
+tickercontents[1]='a la materia de INTRANETS'
+tickercontents[2]='esta es una prueba'
+
+var tickdelay=3000 //delay btw messages
+var highlightspeed=10 //10 pixels at a time.
+
+////Do not edit pass this line////////////////
+
+var currentmessage=0
+var clipwidth=0
+
+function changetickercontent(){
+crosstick.style.clip="rect(0px 0px auto 0px)"
+crosstick.innerHTML=tickercontents[currentmessage]
+highlightmsg()
+}
+
+function highlightmsg(){
+var msgwidth=crosstick.offsetWidth
+if (clipwidth<msgwidth){
+clipwidth+=highlightspeed
+crosstick.style.clip="rect(0px "+clipwidth+"px auto 0px)"
+beginclip=setTimeout("highlightmsg()",20)
+}
+else{
+clipwidth=0
+clearTimeout(beginclip)
+if (currentmessage==tickercontents.length-1) currentmessage=0
+else currentmessage++
+setTimeout("changetickercontent()",tickdelay)
+}
+}
+
+function start_ticking(){
+crosstick=document.getElementById? document.getElementById("highlighter") : document.all.highlighter
+crosstickParent=crosstick.parentNode? crosstick.parentNode : crosstick.parentElement
+if (parseInt(crosstick.offsetHeight)>0)
+crosstickParent.style.height=crosstick.offsetHeight+'px'
+else
+setTimeout("crosstickParent.style.height=crosstick.offsetHeight+'px'",100) //delay for Mozilla's sake
+changetickercontent()
+}
+
+if (document.all || document.getElementById)
+window.onload=start_ticking
+
+</script>
+
+
+
+  </div>
+</div>
+ <p>    </p>
+ <p> </p>
+ <div id="Layer2" style="position:absolute; left:941px; top:17px; width:190px; height:113px; z-index:2"><img src="compu.gif" width="190" height="113"></div>
+ 
+
+</body>
+</html>
